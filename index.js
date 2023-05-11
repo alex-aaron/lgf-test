@@ -5,6 +5,7 @@
 var customers = require('./data/customers.json');
 var _ = require('underbar');
 
+
 /**
  * 1. Import your lodown module using the require() method,
  *    using the string 'lodown-<my-username>', or whatever
@@ -16,16 +17,39 @@ var _ = require('underbar');
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./<YOUR_GITHUB_FOLDER>
+ *    npm start --prefix ./lgf-test
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
-var maleCount;
+// map, filter, reduce, each
 
-var femaleCount;
+var maleCount = function(array){
+   let males = _.filter(array, function(customer){
+        return customer.gender === 'male';
+   });
 
-var oldestCustomer;
+   return males.length;
+};
+
+var femaleCount = function(array){
+    return _.reduce(array, function(accumulator, current){ // accumulator => 0 | current => {0}
+        if (current.gender === 'female'){
+            accumulator += 1;
+        }
+        return accumulator; 
+    }, 0);
+
+};
+
+var oldestCustomer = function(array){
+    let oldest = _.reduce(array, function(accumulator, current){
+        // determine if current customer is older than accumulator
+            // return current
+        // else
+            // return accumulator
+    });
+};
 
 var youngestCustomer;
 
