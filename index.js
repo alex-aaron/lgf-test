@@ -24,32 +24,11 @@ var _ = require('underbar');
 
 // map, filter, reduce, each
 
-var maleCount = function(array){
-   let males = _.filter(array, function(customer){
-        return customer.gender === 'male';
-   });
+var maleCount;
 
-   return males.length;
-};
+var femaleCount;
 
-var femaleCount = function(array){
-    return _.reduce(array, function(accumulator, current){ // accumulator => 0 | current => {0}
-        if (current.gender === 'female'){
-            accumulator += 1;
-        }
-        return accumulator; 
-    }, 0);
-
-};
-
-var oldestCustomer = function(array){
-    let oldest = _.reduce(array, function(accumulator, current){
-        // determine if current customer is older than accumulator
-            // return current
-        // else
-            // return accumulator
-    });
-};
+var oldestCustomer;
 
 var youngestCustomer;
 
